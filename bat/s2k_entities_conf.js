@@ -53,7 +53,7 @@ exports.config = {
             //usermail: 'tsotest@s2k.net', //hq登录用户名
             //password: '1234'
 
-            //usermail: 'tsosite@s2k.net',
+            //usermail: 'bptest@s2k.net', //bp登陆用户名
             //password: '1234'
 
             usermail: 'test@s2k.net', //local登录用户名
