@@ -1,0 +1,86 @@
+{
+  "name": "elasticsearch-exporter",
+  "description": "A utility for exporting data from one Elasticsearch cluster to another",
+  "keywords": [
+    "export",
+    "import",
+    "elastichsearch",
+    "data pump",
+    "file",
+    "transfer",
+    "tools",
+    "cli",
+    "command line",
+    "database",
+    "backup",
+    "restore",
+    "archive"
+  ],
+  "homepage": "http://github.com/mallocator/Elasticsearch-Exporter",
+  "bugs": {
+    "url": "http://github.com/mallocator/Elasticsearch-Exporter/issues",
+    "email": "mallox@pyxzl.net"
+  },
+  "license": "Apache 2.0",
+  "version": "1.4.0",
+  "author": {
+    "name": "Ravi Gairola",
+    "email": "mallox@pyxzl.net"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/mallocator/Elasticsearch-Exporter.git"
+  },
+  "files": [
+    "drivers",
+    "options.js",
+    "exporter.js",
+    "tools",
+    "README.md",
+    "LICENSE"
+  ],
+  "main": "./exporter.js",
+  "bin": {
+    "eexport": "tools/ex.sh"
+  },
+  "dependencies": {
+    "nomnom": "1.7.x",
+    "through": "2.3.x",
+    "colors": ">=0.5.x"
+  },
+  "devDependencies": {
+    "mocha": "1.18.x",
+    "gently": "0.9.x",
+    "chai": "1.9.x",
+    "nock": "0.27.x",
+    "istanbul": "0.3.x"
+  },
+  "engine": {
+    "node": ">=0.10"
+  },
+  "scripts": {
+    "test": "istanbul cover _mocha"
+  },
+  "gitHead": "8c4806dd19e924e101c410f172f3196563acdeeb",
+  "_id": "elasticsearch-exporter@1.4.0",
+  "_shasum": "3686f51b280ff45f1fbb38ad0e8ba22c7927d5c6",
+  "_from": "elasticsearch-exporter@",
+  "_npmVersion": "1.4.28",
+  "_npmUser": {
+    "name": "mallocator",
+    "email": "mallox@pyxzl.net"
+  },
+  "maintainers": [
+    {
+      "name": "mallocator",
+      "email": "mallox@pyxzl.net"
+    }
+  ],
+  "dist": {
+    "shasum": "3686f51b280ff45f1fbb38ad0e8ba22c7927d5c6",
+    "tarball": "http://registry.npmjs.org/elasticsearch-exporter/-/elasticsearch-exporter-1.4.0.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/elasticsearch-exporter/-/elasticsearch-exporter-1.4.0.tgz",
+  "readme": "ERROR: No README data found!"
+}
