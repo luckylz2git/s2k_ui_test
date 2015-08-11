@@ -2,7 +2,6 @@
  * Created by Lin.Zhi on 2015-08-11.
  */
 //headless test specification file
-
 //Print console.log with Date-Time Stamp
 printLog = function(logText){
     var moment = require('moment');
