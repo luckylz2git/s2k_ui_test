@@ -37,7 +37,7 @@ showfooter = function() {
 
 click_tax_authority = function(dropdown, menuindex, listindex){
     //console.log('\n********** Click List No. '+ (listindex+1) +' **********\n');
-    var menu=dropdown.all(by.css('[ng-click="go(link.link)"]')).get(menuindex); //products catalog固定值0
+    var menu=dropdown.all(by.css('[ng-click="go(link.link)"]')).get(menuindex); //entities menuindex = 2
     menu.getText().then(function(menutext){
         console.log('\nClick Dropdown Menu [ '+ menutext +' ] Index:' + menuindex);
     });
@@ -195,7 +195,7 @@ click_tax_authority = function(dropdown, menuindex, listindex){
 
 click_store = function(dropdown, menuindex, listindex){
     //console.log('\n********** Click List No. '+ (listindex+1) +' **********\n');
-    var menu=dropdown.all(by.css('[ng-click="go(link.link)"]')).get(menuindex); //products catalog固定值0
+    var menu=dropdown.all(by.css('[ng-click="go(link.link)"]')).get(menuindex); //entities menuindex = 2
     menu.getText().then(function(menutext){
         console.log('\nClick Dropdown Menu [ '+ menutext +' ] Index:' + menuindex);
     });
