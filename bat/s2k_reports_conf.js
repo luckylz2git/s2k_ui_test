@@ -9,7 +9,7 @@ exports.config = {
     //chromeOnly: true, //Warning: chromeOnly is deprecated. Use directConnect
     directConnect: true,
     chromeDriver: '../selenium/chromedriver',
-
+    //chromeDriver: 'E:/GitHub/s2k_ui_test/selenium/chromdriver',
     /*start up protractor only by chrome*/
     //seleniumAddress: 'http://localhost:4444/wd/hub',
 
@@ -59,6 +59,13 @@ exports.config = {
         },
         test: {
             count: 2 //每个列表测试次数
+        },
+        menuindex: { //用于管理菜单列表
+            reports: {
+                index: 5,
+                idxS2KReports: 0,
+                idxHQReports:  1
+            }
         }
         //参考网址：http://ramonvictor.github.io/protractor/slides/#/37
     },
