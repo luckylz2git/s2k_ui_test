@@ -103,7 +103,7 @@ describe("s2k login page", function() {
             var i, j;
             var testcount = browser.params.test.count;
 
-            for (j = 0; j < 25; j++) {
+            for (j = 0; j < 26; j++) {
                 for (i = 0; i < testcount; i++) {
                     //Ref：http://stackoverflow.com/questions/21634558/looping-on-a-protractor-test-with-parameters
                     (function (menuindex, testindex) {
