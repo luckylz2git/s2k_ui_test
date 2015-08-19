@@ -757,7 +757,7 @@ describe("s2k login page", function() {
             var testcount = browser.params.test.count;
             var listname = '';
             //for (j = 0; j < 14; j++) {
-            for (j = 0; j < 5; j++) {
+            for (j = 0; j < 7; j++) {
                 switch (j) {
                     case 0:
                         listname = 'Users'; //'Accounts';
@@ -774,6 +774,19 @@ describe("s2k login page", function() {
                     case 4:
                         listname = 'POS Terminals'; //'Payment method';
                         break;
+                    case 5:
+                        listname = 'S2K Devices';
+                        break;
+                    case 6:
+                        listname = 'Cutover Store Definition';
+                        break;
+                    case 7:
+                        listname = 'SFTP Maintenance';
+                        break;
+                    case 8:
+                        listname = 'Online Documentation';
+                        break;
+                    /*
                     case 5:
                         listname = 'Credit Card Gateways';
                         break;
@@ -801,6 +814,7 @@ describe("s2k login page", function() {
                     case 13:
                         listname = 'Site Navigations';
                         break;
+                    */
                     default:
                         listname = '';
                         break;
