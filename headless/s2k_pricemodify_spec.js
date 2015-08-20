@@ -36,8 +36,7 @@ showfooter = function() {
 };
 
 click_pricebook_modify = function(dropdown, listindex){
-    //var menu=dropdown.all(by.css('[ng-click="go(link.link)"]')).get(1); //pricebook
-    var menu=dropdown.all(by.css('[ng-click="go(link.link)"]')).get(0); //pricebook
+    var menu=dropdown.all(by.css('[ng-click="go(link.link)"]')).get(1); //pricebook
     menu.getText().then(function(menutext){
         printLog('Click Dropdown Menu [ '+ menutext +' ] Index:1');
     });

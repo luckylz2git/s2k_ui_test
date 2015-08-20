@@ -29,7 +29,7 @@ exports.config = {
         }
     },
     onPrepare: function() {
-        browser.driver.manage().window().setSize(1024, 768);//window size
+        browser.driver.manage().window().setSize(1280, 1024);//window size
     },
     // Spec patterns are relative to the current working directly when
     specs: ['s2k_pricemodify_spec.js'],
