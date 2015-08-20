@@ -46,12 +46,12 @@ click_pricebook_modify = function(dropdown, listindex){
         subTitle1.count().then(function(list){
             if (list>0) {
                 printLog('Located SubTitle Name [ Listing ]');
+                expect(subTitle1.first().getText()).toEqual('Listing');
             }
             else {
                 printLog('*** *** *** CANNOT Located SubTitle Name [ Listing ] !');
             }
         });
-        expect(subTitle1.first().getText()).toEqual('Listing');
     });
 
     var perpagecount = '30';
