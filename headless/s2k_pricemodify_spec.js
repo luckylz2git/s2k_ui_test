@@ -41,18 +41,18 @@ click_pricebook_modify = function(dropdown, listindex){
     menu.getText().then(function(menutext){
         printLog('Click Dropdown Menu [ '+ menutext +' ] Index:1');
     });
-    menu.click().then(showfooter);
-
-    var subTitle1 = element.all(by.css('[ng-show="subTitle"]'));
-    subTitle1.count().then(function(list){
-        if (list>0) {
-            printLog('Located SubTitle Name [ Listing ]');
-        }
-        else {
-            printLog('*** *** *** CANNOT Located SubTitle Name [ Listing ] !');
-        }
+    menu.click().then(showfooter).then(function(){
+        var subTitle1 = element.all(by.css('[ng-show="subTitle"]'));
+        subTitle1.count().then(function(list){
+            if (list>0) {
+                printLog('Located SubTitle Name [ Listing ]');
+            }
+            else {
+                printLog('*** *** *** CANNOT Located SubTitle Name [ Listing ] !');
+            }
+        });
+        expect(subTitle1.first().getText()).toEqual('Listing');
     });
-    expect(subTitle1.first().getText()).toEqual('Listing');
 
     var perpagecount = '30';
     var perpage = element.all(by.css('[class="col-md-3 sg-footer"]')).first();
