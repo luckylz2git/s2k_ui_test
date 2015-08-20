@@ -54,6 +54,13 @@ click_pricebook_modify = function(dropdown, listindex){
         });
     });
 
+    var list = element.all(by.repeater('item in items')); //Get List
+    list.forEach(function(item){
+        item.getAttribute('title').then(function(text){
+            printLog(text);
+        });
+    });
+
     var perpagecount = '30';
     var perpage = element.all(by.css('[class="col-md-3 sg-footer"]')).first();
     perpage.click().then(function(){
@@ -61,7 +68,6 @@ click_pricebook_modify = function(dropdown, listindex){
         element.all(by.css('[class="editable-buttons"]')).click();
     });
 
-    var list = element.all(by.repeater('item in items')); //Get List
     var found = false, check = 0, ireturn = -1;
     list.count().then(function(icount) {
         printLog('Searching for Retail == SRP from list count: ' + icount);
