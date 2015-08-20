@@ -55,17 +55,16 @@ click_pricebook_modify = function(dropdown, listindex){
     });
 
     var list = element.all(by.repeater('item in items')); //Get List
-    list.forEach(function(item){
-        item.getAttribute('title').then(function(text){
-            printLog(text);
-        });
-    });
-
-    var perpagecount = '30';
-    var perpage = element.all(by.css('[class="col-md-3 sg-footer"]')).first();
-    perpage.click().then(function(){
-        element.all(by.css('[type="number"]')).first().clear().sendKeys(perpagecount);
-        element.all(by.css('[class="editable-buttons"]')).click();
+    list.count().then(function(icount){
+        if (icount > 0) {
+            printLog('Get List Count: ' + icount);
+            var perpagecount = '30';
+            var perpage = element.all(by.css('[class="col-md-3 sg-footer"]')).first();
+            perpage.click().then(function(){
+                element.all(by.css('[type="number"]')).first().clear().sendKeys(perpagecount);
+                element.all(by.css('[class="editable-buttons"]')).click();
+            });
+        }
     });
 
     var found = false, check = 0, ireturn = -1;
