@@ -36,13 +36,13 @@ showfooter = function() {
 };
 
 click_pricebook_modify = function(dropdown, listindex){
-    var menu=dropdown.all(by.css('[ng-click="go(link.link)"]')).get(1); //pricebook
-
+    //var menu=dropdown.all(by.css('[ng-click="go(link.link)"]')).get(1); //pricebook
+    var menu=dropdown.all(by.css('[ng-click="go(link.link)"]')).get(0); //pricebook
     menu.getText().then(function(menutext){
         printLog('Click Dropdown Menu [ '+ menutext +' ] Index:1');
     });
     menu.click().then(showfooter).then(function(){
-        browser.sleep(30000);
+        //browser.sleep(30000);
         var subTitle1 = element.all(by.css('[ng-show="subTitle"]'));
         subTitle1.count().then(function(list){
             if (list>0) {
