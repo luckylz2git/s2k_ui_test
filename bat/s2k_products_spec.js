@@ -317,8 +317,8 @@ click_advanced_search = function(dropdown, menuindex, listindex){
                     dList.get(listindex % icount).then(function (ele) {
                         //ele.element(by.css('div')).getText().then(console.log);
                         //ele.element(by.css('div')).click();
-                        console.log('try to read href');
-                        ele.getAttribute('href').then(console.log);
+                        console.log('try to read a class');
+                        ele.getAttribute('class').then(console.log);
                         //ele.element(by.css('[class="ng-binding ng-scope"]')).getText().then(console.log);
                         //ele.element(by.css('[class="ng-binding ng-scope"]')).click();
                     });
