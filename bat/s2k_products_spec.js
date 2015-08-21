@@ -282,6 +282,8 @@ click_advanced_search = function(dropdown, menuindex, listindex){
         console.log('\nClick Dropdown Menu [ '+ menutext +' ] Index:' + menuindex);
     });
     menu.click().then(showfooter);
+    browser.driver.sleep(1);
+    browser.waitForAngular();
 
     var subTitle1 = element.all(by.css('[ng-show="subTitle"]'));
     subTitle1.count().then(function(list){
@@ -313,8 +315,12 @@ click_advanced_search = function(dropdown, menuindex, listindex){
                 dList.count().then(function (icount) {
                     console.log('Department List : ' + icount + ' record(s).');
                     dList.get(listindex % icount).then(function (ele) {
-                        ele.element(by.css('div')).getText().then(console.log);
-                        ele.element(by.css('div')).click();
+                        //ele.element(by.css('div')).getText().then(console.log);
+                        //ele.element(by.css('div')).click();
+                        console.log('try to read href');
+                        ele.getAttribute('href').then(console.log);
+                        //ele.element(by.css('[class="ng-binding ng-scope"]')).getText().then(console.log);
+                        //ele.element(by.css('[class="ng-binding ng-scope"]')).click();
                     });
                 });
             });
@@ -1005,7 +1011,7 @@ describe("s2k login page", function() {
     var topMenu = browser.params.menuindex.products.index;
     it("login to system", logins2k);
 
-    if (true) {
+    if (false) {
         describe('"Products" menu navigation', function () {
             var dropdown;
             beforeEach(function () {
@@ -1149,6 +1155,26 @@ describe("s2k login page", function() {
                         console.log('Check Barcode', testindex, 'Value :', aBarcode);
                         click_upc_assembly(dropdown, browser.params.menuindex.products.idxUPCAssembly, testindex); //3=UPC Assembly
                         browser.sleep(500);
+                    });
+                })(i);
+            }
+        });
+    }
+
+    if (true) {
+        describe('Products Unit Debug Test', function () {
+            var dropdown;
+            beforeEach(function () {
+                dropdown = element.all(by.repeater('item in modules')).get(topMenu); //Get "Products"
+                dropdown.click().then(showfooter);
+            });
+            var i;
+            var testcount = browser.params.test.count;
+
+            for (i = 0; i < testcount; i++) {
+                (function (testindex) {
+                    it('Products Advance Search', function () {
+                        click_advanced_search(dropdown, browser.params.menuindex.products.idxProducts, testindex); //0=Products Catalog
                     });
                 })(i);
             }
