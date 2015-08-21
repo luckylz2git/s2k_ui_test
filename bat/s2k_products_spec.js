@@ -311,13 +311,12 @@ click_advanced_search = function(dropdown, menuindex, listindex){
 
             mSelect.element(by.css('input')).click().then(function () {
                 //var dList = element.all(by.className('ui-select-choices-row ng-scope'));
-                //var dList = mSelect.element(by.className('ui-select-choices-group')).all(by.css('[class="ui-select-choices-row-inner"]'));
-                var dList = mSelect.element(by.className('ui-select-choices-group')).all(by.css('[class="ui-select-choices-row"]'));
+                var dList = mSelect.element(by.className('ui-select-choices-group')).all(by.css('[class="ui-select-choices-row-inner"]'));
                 dList.count().then(function (icount) {
                     console.log('Department List : ' + listindex + '/' + icount + ' record(s).');
                     console.log('try to read a class');
-                    dList.first().getText().then(console.log);
-                    dList.first().all(by.classname('ng-binding ng-scope')).count().then(console.log);
+                    mSelect.element(by.className('ui-select-choices-group')).all(by.css('[class="ui-select-choices-row-inner"]')).first().getText().then(console.log);
+                    //dList.first().all(by.classname('ng-binding ng-scope')).count().then(console.log);
                     //dList.get(listindex % icount).element(by.classname('ng-binding ng-scope')).getText().then(console.log);
                     //dList.get(listindex % icount).then(function (ele) {
                         //ele.element(by.css('div')).getText().then(console.log);
