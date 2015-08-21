@@ -312,7 +312,7 @@ click_advanced_search = function(dropdown, menuindex, listindex){
             mSelect.element(by.css('input')).click().then(function () {
                 //var dList = element.all(by.className('ui-select-choices-row ng-scope'));
                 //var dList = mSelect.element(by.className('ui-select-choices-group')).all(by.css('[class="ui-select-choices-row-inner"]'));
-                var dList = mSelect.element(by.className('ui-select-choices-group')).all(by.className('ui-select-choices-row-inner'));
+                var dList = mSelect.element(by.className('ui-select-choices-group')).all(by.css('[class="ui-select-choices-row"]'));
                 dList.count().then(function (icount) {
                     console.log('Department List : ' + listindex + '/' + icount + ' record(s).');
                     console.log('try to read a class');
