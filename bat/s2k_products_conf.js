@@ -59,7 +59,7 @@ exports.config = {
             password: '1234'
         },
         test: {
-            count: 1 //每个列表测试次数
+            count: 2 //每个列表测试次数
         },
         menuindex: { //用于管理菜单列表
             products: {
