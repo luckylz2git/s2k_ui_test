@@ -314,16 +314,17 @@ click_advanced_search = function(dropdown, menuindex, listindex){
                 var dList = mSelect.element(by.className('ui-select-choices-group')).all(by.css('[class="ui-select-choices-row-inner"]'));
                 dList.count().then(function (icount) {
                     console.log('Department List : ' + listindex + '/' + icount + ' record(s).');
-                    dList = mSelect.element(by.className('ui-select-choices-group')).all(by.css('[class="ui-select-choices-row-inner"]'));
+                    mSelect.element(by.className('ui-select-choices-group')).all(by.css('[class="ui-select-choices-row-inner"]')).get(listindex % icount).getText().then(console.log);
+                    mSelect.element(by.className('ui-select-choices-group')).all(by.css('[class="ui-select-choices-row-inner"]')).get(listindex % icount).click();
                     //dList.first().all(by.classname('ng-binding ng-scope')).count().then(console.log);
                     //dList.get(listindex % icount).element(by.classname('ng-binding ng-scope')).getText().then(console.log);
-                    dList.get(listindex % icount).then(function (ele) {
-                        ele.getText().then(console.log);
-                        ele.click();
+                    //dList.get(listindex % icount).then(function (ele) {
+                    //    ele.getText().then(console.log);
+                    //    ele.element(by.css('div'))click();
                         //ele.getAttribute('class').then(console.log);
                         //ele.element(by.css('[class="ng-binding ng-scope"]')).getText().then(console.log);
                         //ele.element(by.css('[class="ng-binding ng-scope"]')).click();
-                    });
+                    //});
                 });
             });
 
