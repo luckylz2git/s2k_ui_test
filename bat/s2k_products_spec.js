@@ -138,6 +138,7 @@ click_products_catalog = function(dropdown, menuindex, listindex){
                  */
                 //.click().then(showfooter);
             }).then(function(){
+                browser.executeScript('window.scrollTo(0,0)');
                 element(by.css('[ng-click="backToList()"]')).click().then(showfooter).then(function(){
                     console.log('Go Back To [ Listing ] Page\n');
                     expect(subTitle1.first().getText()).toEqual('Listing');
