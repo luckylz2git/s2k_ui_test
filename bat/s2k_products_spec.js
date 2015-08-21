@@ -1016,7 +1016,7 @@ describe("s2k login page", function() {
     var topMenu = browser.params.menuindex.products.index;
     it("login to system", logins2k);
 
-    if (true) {
+    if (false) {
         describe('"Products" menu navigation', function () {
             var dropdown;
             beforeEach(function () {
@@ -1166,7 +1166,7 @@ describe("s2k login page", function() {
         });
     }
 
-    if (false) {
+    if (true) {
         describe('Products Unit Debug Test', function () {
             var dropdown;
             beforeEach(function () {
@@ -1177,9 +1177,10 @@ describe("s2k login page", function() {
             var testcount = browser.params.test.count;
 
             for (i = 0; i < testcount; i++) {
+                //闭包函数参考：http://stackoverflow.com/questions/21634558/looping-on-a-protractor-test-with-parameters
                 (function (testindex) {
-                    it('Products Advance Search', function () {
-                        click_advanced_search(dropdown, browser.params.menuindex.products.idxProducts, testindex); //0=Products Catalog
+                    it('Tax Rate', function () {
+                        click_products_catalog(dropdown, browser.params.menuindex.products.idxTaxRates, testindex); //7=Tax Rate
                     });
                 })(i);
             }
