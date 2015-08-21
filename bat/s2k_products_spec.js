@@ -329,6 +329,8 @@ click_advanced_search = function(dropdown, menuindex, listindex){
             });
 
             element(by.css('[ng-click="ok()"]')).click().then(showfooter);
+            browser.driver.sleep(1);
+            browser.waitForAngular();
 
             expect(element.all(by.repeater('item in items')).count()).not.toBe(0);
 
