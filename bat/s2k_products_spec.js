@@ -316,7 +316,8 @@ click_advanced_search = function(dropdown, menuindex, listindex){
                 dList.count().then(function (icount) {
                     console.log('Department List : ' + listindex + '/' + icount + ' record(s).');
                     console.log('try to read a class');
-                    dList.get(listindex % icount).element(by.classname('ng-binding ng-scope')).getText().then(console.log);
+                    dList.all(by.classname('ng-binding ng-scope')).count().then(console.log);
+                    //dList.get(listindex % icount).element(by.classname('ng-binding ng-scope')).getText().then(console.log);
                     //dList.get(listindex % icount).then(function (ele) {
                         //ele.element(by.css('div')).getText().then(console.log);
                         //ele.element(by.css('div')).click();
