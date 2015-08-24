@@ -40,18 +40,19 @@ click_pricebook_modify = function(dropdown, listindex){
     menu.getText().then(function(menutext){
         printLog('Click Dropdown Menu [ '+ menutext +' ] Index:1');
     });
-    dropdown.all(by.css('[ng-click="go(link.link)"]')).get(1).click().then(showfooter).then(function(){
-        //browser.sleep(30000);
-        var subTitle1 = element.all(by.css('[ng-show="subTitle"]'));
-        subTitle1.count().then(function(list){
-            if (list>0) {
-                printLog('Located SubTitle Name [ Listing ]');
-                expect(subTitle1.first().getText()).toEqual('Listing');
-            }
-            else {
-                printLog('*** *** *** CANNOT Located SubTitle Name [ Listing ] !');
-            }
-        });
+    menu.click().then(showfooter);
+    browser.driver.sleep(1);
+    browser.waitForAngular();
+
+    var subTitle1 = element.all(by.css('[ng-show="subTitle"]'));
+    subTitle1.count().then(function(list){
+        if (list>0) {
+            printLog('Located SubTitle Name [ Listing ]');
+            expect(subTitle1.first().getText()).toEqual('Listing');
+        }
+        else {
+            printLog('*** *** *** CANNOT Located SubTitle Name [ Listing ] !');
+        }
     });
 
     var list = element.all(by.repeater('item in items')); //Get List
