@@ -40,9 +40,10 @@ click_pricebook_modify = function(dropdown, listindex){
     menu.getText().then(function(menutext){
         printLog('Click Dropdown Menu [ '+ menutext +' ] Index:1');
     });
-    menu.click().then(showfooter);
-    //browser.driver.sleep(1);
+    menu.click();
+    browser.driver.sleep(1);
     browser.waitForAngular();
+    showfooter;
 
     var subTitle1 = element.all(by.css('[ng-show="subTitle"]'));
     subTitle1.count().then(function(list){
