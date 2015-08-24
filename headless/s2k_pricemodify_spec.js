@@ -38,7 +38,8 @@ showfooter = function() {
 take_screen_shot = function(filename) {
     var fs = require('fs');
     browser.takeScreenshot().then(function(png){
-        var stream = fs.createWriteStream('screenshots/' + filename + '.png');
+        console.log('/opt/protractor/s2k_ui_test/headless/' + filename + '.png');
+        var stream = fs.createWriteStream('/opt/protractor/s2k_ui_test/headless/' + filename + '.png');
         stream.write(new Buffer(png, 'base64'));
         stream.end();
     });
