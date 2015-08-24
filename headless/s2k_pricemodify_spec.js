@@ -35,6 +35,15 @@ showfooter = function() {
     });
 };
 
+take_screen_shot = function(filename) {
+    var fs = require('fs');
+    browser.takeScreenshot().then(function(png){
+        var stream = fs.createWriteStream('screenshots/' + filename + '.png');
+        stream.write(new Buffer(png, 'base64'));
+        stream.end();
+    });
+};
+
 click_pricebook_modify = function(dropdown, listindex){
     var menu=dropdown.all(by.css('[ng-click="go(link.link)"]')).get(1); //pricebook
     menu.getText().then(function(menutext){
@@ -43,10 +52,10 @@ click_pricebook_modify = function(dropdown, listindex){
     menu.click();
     browser.driver.sleep(1);
     browser.waitForAngular();
-    showfooter;
+    showfooter();
 
     var bFindTitle = false;
-    for (var j = 0; j < 30; j++) {
+    for (var j = 0; j < 5; j++) {
         (function (index) {
             if (bFindTitle) {
                 return true;
@@ -66,7 +75,7 @@ click_pricebook_modify = function(dropdown, listindex){
             });
         })(j)
     }
-
+    take_screen_shot('findtitle');
     if (!bFindTitle) {
         var subTitle1 = element.all(by.css('[ng-show="subTitle"]'));
         subTitle1.count().then(function (list) {
