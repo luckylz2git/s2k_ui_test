@@ -205,12 +205,14 @@ click_pricebook_modify = function(dropdown, listindex){
 //******************************************************************************************
 describe("s2k login page", function() {
     it("login to system", logins2k);
+    take_screen_shot('login');
     if (true) {
         describe('"Pricebook" modification', function () {
             var dropdown;
             beforeEach(function () {
                 dropdown = element.all(by.repeater('item in modules')).get(0); //Get "Products"
                 dropdown.click().then(showfooter);
+                take_screen_shot('product');
             });
             var i;
             var testcount = browser.params.test.count;
