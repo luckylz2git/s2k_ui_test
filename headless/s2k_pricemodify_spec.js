@@ -41,19 +41,19 @@ click_pricebook_modify = function(dropdown, listindex){
         printLog('Click Dropdown Menu [ '+ menutext +' ] Index:1');
     });
     menu.click().then(showfooter);
-    browser.driver.sleep(1);
+    //browser.driver.sleep(1);
     browser.waitForAngular();
 
     var subTitle1 = element.all(by.css('[ng-show="subTitle"]'));
     subTitle1.count().then(function(list){
         if (list>0) {
             printLog('Located SubTitle Name [ Listing ]');
-            expect(subTitle1.first().getText()).toEqual('Listing');
         }
         else {
             printLog('*** *** *** CANNOT Located SubTitle Name [ Listing ] !');
         }
     });
+    expect(subTitle1.first().getText()).toEqual('Listing');
 
     var list = element.all(by.repeater('item in items')); //Get List
     list.count().then(function(icount){
