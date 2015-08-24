@@ -75,7 +75,7 @@ click_pricebook_modify = function(dropdown, listindex){
             });
         })(j)
     }
-    take_screen_shot('findtitle');
+    take_screen_shot('findtitle' + listindex);
     if (!bFindTitle) {
         var subTitle1 = element.all(by.css('[ng-show="subTitle"]'));
         subTitle1.count().then(function (list) {
