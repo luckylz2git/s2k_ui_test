@@ -61,7 +61,7 @@ click_pricebook_modify = function(dropdown, listindex){
                 }
                 else {
                     printLog('*** *** *** CANNOT Located SubTitle Name [ Listing ] !');
-                    return false;
+                    return bFindTitle;
                 }
             });
         })(j)
