@@ -18,6 +18,7 @@ logins2k = function(){
 
     element(by.model('user.password')).sendKeys(password); //params.login.password
     element(by.model('user.password')).getAttribute('value').then(printLog);
+    take_screen_shot('login');
 
     var btnLogin = element(by.buttonText('LOGIN'));
     btnLogin.click();//login
@@ -51,6 +52,7 @@ click_pricebook_modify = function(dropdown, listindex){
         printLog('Click Dropdown Menu [ '+ menutext +' ] Index:1');
     });
     menu.click();
+    take_screen_shot('price' + listindex);
     browser.driver.sleep(1);
     browser.waitForAngular();
     showfooter();
@@ -206,14 +208,13 @@ click_pricebook_modify = function(dropdown, listindex){
 //******************************************************************************************
 describe("s2k login page", function() {
     it("login to system", logins2k);
-    take_screen_shot('login');
+
     if (true) {
         describe('"Pricebook" modification', function () {
             var dropdown;
             beforeEach(function () {
                 dropdown = element.all(by.repeater('item in modules')).get(0); //Get "Products"
                 dropdown.click().then(showfooter);
-                take_screen_shot('product');
             });
             var i;
             var testcount = browser.params.test.count;
