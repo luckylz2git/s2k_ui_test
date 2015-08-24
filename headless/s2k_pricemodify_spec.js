@@ -46,12 +46,12 @@ click_pricebook_modify = function(dropdown, listindex){
     showfooter;
 
     var bFindTitle = false;
-    for (var j = 0; j < 20; j++) {
+    for (var j = 0; j < 30; j++) {
         (function (index) {
             if (bFindTitle) {
                 return true;
             }
-            browser.sleep(index*1000);
+            browser.sleep(1000);
             var subTitle1 = element.all(by.css('[ng-show="subTitle"]'));
             subTitle1.count().then(function(list){
                 if (list>0) {

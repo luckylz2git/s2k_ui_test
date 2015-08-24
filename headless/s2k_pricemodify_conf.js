@@ -8,9 +8,9 @@ exports.config = {
     // Framework to use. Jasmine 2 is recommended.
     framework: 'jasmine2',
     //Waiting for Page to Load & Waiting for Angular
-    getPageTimeout: 150000,
+    getPageTimeout: 50000,
     //Waiting for Page Synchronization
-    allScriptsTimeout: 151000,
+    allScriptsTimeout: 51000,
     // Capabilities to be passed to the webdriver instance.
     capabilities: {
         'browserName': 'chrome',
@@ -36,6 +36,6 @@ exports.config = {
     // Options to be passed to Jasmine-node.
     jasmineNodeOpts: {
         showColors: true,
-        defaultTimeoutInterval: 160000
+        defaultTimeoutInterval: 60000
     }
 };
