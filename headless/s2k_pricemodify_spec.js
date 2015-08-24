@@ -45,16 +45,43 @@ click_pricebook_modify = function(dropdown, listindex){
     browser.waitForAngular();
     showfooter;
 
-    var subTitle1 = element.all(by.css('[ng-show="subTitle"]'));
-    subTitle1.count().then(function(list){
-        if (list>0) {
-            printLog('Located SubTitle Name [ Listing ]');
-        }
-        else {
-            printLog('*** *** *** CANNOT Located SubTitle Name [ Listing ] !');
-        }
-    });
-    expect(subTitle1.first().getText()).toEqual('Listing');
+    var bFindTitle = false;
+    for (var j = 0; j < 20; j++) {
+        (function (index) {
+            if (bFindTitle) {
+                return true;
+            }
+            browser.sleep(index*1000);
+            var subTitle1 = element.all(by.css('[ng-show="subTitle"]'));
+            subTitle1.count().then(function(list){
+                if (list>0) {
+                    printLog('Located SubTitle Name [ Listing ]');
+                    bFindTitle = true;
+                    return true;
+                }
+                else {
+                    printLog('*** *** *** CANNOT Located SubTitle Name [ Listing ] !');
+                    return false;
+                }
+            });
+        })(j)
+    }
+
+    if (!bFindTitle) {
+        var subTitle1 = element.all(by.css('[ng-show="subTitle"]'));
+        subTitle1.count().then(function (list) {
+            if (list > 0) {
+                printLog('Located SubTitle Name [ Listing ]');
+                bFindTitle = true;
+            }
+            else {
+                printLog('*** *** *** CANNOT Located SubTitle Name [ Listing ] !');
+            }
+        });
+    }
+    if (bFindTitle) {
+        expect(element.all(by.css('[ng-show="subTitle"]')).first().getText()).toEqual('Listing');
+    }
 
     var list = element.all(by.repeater('item in items')); //Get List
     list.count().then(function(icount){
