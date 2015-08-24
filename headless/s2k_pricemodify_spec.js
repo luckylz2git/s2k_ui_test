@@ -38,8 +38,8 @@ showfooter = function() {
 take_screen_shot = function(filename) {
     var fs = require('fs');
     browser.takeScreenshot().then(function(png){
-        console.log('/opt/protractor/' + filename + '.png');
-        var stream = fs.createWriteStream('/opt/protractor/' + filename + '.png');
+        console.log('/opt/protractor/screenshots/' + filename + '.png');
+        var stream = fs.createWriteStream('/opt/protractor/screenshots/' + filename + '.png');
         stream.write(new Buffer(png, 'base64'));
         stream.end();
     });
